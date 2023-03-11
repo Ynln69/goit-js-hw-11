@@ -3,7 +3,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import NewsApiService from './fetchImages';
-import renderImageGallery from './renderGallery';
+import renderGallery from './renderGallery';
 
 const refs = {
   searchForm: document.querySelector('#search-form'),
