@@ -2,12 +2,12 @@ import '../css/styles.css';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
-import NewsApiService from './components/fetchImages';
-import renderImageGallery from './components/renderImageGallery';
+import NewsApiService from './fetchImages';
+import renderImageGallery from './renderGallery';
 
 const refs = {
   searchForm: document.querySelector('#search-form'),
-  galleryImage: document.querySelector('.gallery'),
+  gallery: document.querySelector('.gallery'),
   sentinel: document.querySelector('#sentinel'),
 };
 let messageShown = false;
@@ -27,9 +27,9 @@ const observer = new IntersectionObserver(onEntry, options);
 const newsApiService = new NewsApiService();
 const modal = new SimpleLightbox('.gallery a');
 
-refs.searchForm.addEventListener('submit', userSearchImages);
+refs.searchForm.addEventListener('submit', onSearchForm);
 
-function userSearchImages(e) {
+function onSearchForm(e) {
   e.preventDefault();
   observer.unobserve(refs.sentinel);
   messageShown = false;
@@ -83,17 +83,17 @@ function arrfetchImages() {
       return arrImages;
     })
     .then(images => {
-      appendArticlesMarkup(images);
+      articlesMarkup(images);
     })
     .catch(error => console.log(error));
 }
 
-function appendArticlesMarkup(images) {
-  const countryMarkup = renderImageGallery(images);
-  refs.galleryImage.insertAdjacentHTML('beforeend', countryMarkup);
+function articlesMarkup(images) {
+  const countryMarkup = renderGallery(images);
+  refs.gallery.insertAdjacentHTML('beforeend', countryMarkup);
   modal.refresh();
 }
 
 function deleteRender() {
-  refs.galleryImage.innerHTML = '';
+  refs.gallery.innerHTML = '';
 }

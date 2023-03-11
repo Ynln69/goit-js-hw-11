@@ -53,4 +53,47 @@
   justify-content: center;
   align-items: center;
   gap: 25px;
+  padding-top: 50px;
+
+  list-style: none;
+}
+.gallery__link {
+  display: block;
+  border: 1px solid gray;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  transition: all 0.3s;
+
+  color: #2f4f4f;
+  text-decoration: none;
+}
+.photo {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%), 0px 4px 4px rgb(0 0 0 / 6%),
+    1px 4px 6px rgb(0 0 0 / 16%);
+}
+.photo img {
+  height: 180px;
+  width: 300px;
+  display: block;
+  border-radius: 4px 4px 0 0;
+}
+.info {
+  display: flex;
+  gap: 13px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+}
+.info__text {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 15px;
 }
