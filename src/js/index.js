@@ -10,6 +10,7 @@ const refs = {
   gallery: document.querySelector('.gallery'),
   sentinel: document.querySelector('#sentinel'),
 };
+
 let messageShown = false;
 let totalHit = 0;
 
@@ -20,9 +21,11 @@ const onEntry = entries => {
     }
   });
 };
+
 const options = {
   rootMargin: '150px',
 };
+
 const observer = new IntersectionObserver(onEntry, options);
 const newsApiService = new NewsApiService();
 const modal = new SimpleLightbox('.gallery a');
