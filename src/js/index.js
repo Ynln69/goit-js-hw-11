@@ -95,6 +95,8 @@ function articlesMarkup(images) {
   const countryMarkup = renderGallery(images);
   refs.gallery.insertAdjacentHTML('beforeend', countryMarkup);
 
+  modal.refresh();
+
   const { height: cardHeight } = document
     .querySelector('.gallery')
     .firstElementChild.getBoundingClientRect();
@@ -103,8 +105,6 @@ function articlesMarkup(images) {
     top: cardHeight * 2,
     behavior: 'smooth',
   });
-
-  modal.refresh();
 }
 
 function deleteRender() {
