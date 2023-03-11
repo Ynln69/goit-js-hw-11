@@ -18,22 +18,6 @@ const onEntry = entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting && newsApiService.query !== '') {
       arrfetchImages();
-
-      const { height: cardHeight } = document
-        .querySelector('.gallery')
-        .firstElementChild.getBoundingClientRect();
-
-      const totalPages = Math.ceil(totalHit / newsApiService.perPage);
-
-      if (newsApiService.page <= totalPages) {
-        const imagesOnPage = newsApiService.page * newsApiService.perPage;
-        if (imagesOnPage >= totalHit) {
-          window.scrollBy({
-            top: cardHeight * 2,
-            behavior: 'smooth',
-          });
-        }
-      }
     }
   });
 };
@@ -112,15 +96,6 @@ function articlesMarkup(images) {
   refs.gallery.insertAdjacentHTML('beforeend', countryMarkup);
 
   modal.refresh();
-
-  const { height: cardHeight } = document
-    .querySelector('.gallery')
-    .firstElementChild.getBoundingClientRect();
-
-  window.scrollBy({
-    top: cardHeight * 2,
-    behavior: 'smooth',
-  });
 }
 
 function deleteRender() {
