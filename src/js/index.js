@@ -4,7 +4,9 @@ import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import NewsApiService from './fetchImages';
 import renderGallery from './renderGallery';
+import { initScrollTopButton } from './up-button';
 
+initScrollTopButton();
 const refs = {
   searchForm: document.querySelector('#search-form'),
   gallery: document.querySelector('.gallery'),
