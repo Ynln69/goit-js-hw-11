@@ -1,4 +1,5 @@
 body {
+  background-color: #fffacd;
   font-family: monospace;
   margin: 0;
 }
@@ -98,6 +99,9 @@ body {
   gap: 14px;
   justify-content: center;
   align-items: center;
+  border-radius: 0 0 10px 10px;
+
+  background-color: #fffff0;
 }
 .info__text {
   display: flex;
